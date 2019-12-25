@@ -34,3 +34,14 @@ nnoremap <leader>r <C-c>:w<CR>:!python %
 " set tabname to filename
 let &titlestring = @%
 set title
+
+
+" plagin support, initialize plagin meneger
+call plug#begin('~/.vim/plugged')
+Plug 'vim-python/python-syntax'
+Plug 'nvie/vim-flake8'
+call plug#end()
+
+" python-syntux plagin config
+let g:python_highlight_all = 1 " enable python highlight from python syntax plugin
+
