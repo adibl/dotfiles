@@ -39,9 +39,17 @@ set title
 " plagin support, initialize plagin meneger
 call plug#begin('~/.vim/plugged')
 Plug 'vim-python/python-syntax'
-Plug 'nvie/vim-flake8'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 " python-syntux plagin config
 let g:python_highlight_all = 1 " enable python highlight from python syntax plugin
 
+" activate papercolor-theme
+set background=dark
+colorscheme PaperColor
+
+"set up ale
+let g:ale_linters = {'python': ['flake8', 'pylint']}
+let g:ale_fixers = {'python': ['autopep8']}

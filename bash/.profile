@@ -28,6 +28,4 @@ fi
 
 # my changes -------------------------------------------
 export NAVI_PATH="/home/adi/Documents/cheetsheet" # make navi my cheet sheet    s only
-export TERM=xterm-256color #change coloe scheme to fix tmux vim colors bag
-PATH=$PATH:/home/adi/Documents/bash # add my bash scripts to path
 
