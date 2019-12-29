@@ -28,4 +28,5 @@ fi
 
 # my changes -------------------------------------------
 export NAVI_PATH="/home/adi/Documents/cheetsheet" # make navi my cheet sheet    s only
-
+export PATH="$PATH:/home/adi/Documents/bash"
+alias rpy="runPython.sh"

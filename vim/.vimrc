@@ -54,3 +54,9 @@ colorscheme PaperColor
 autocmd FileType python set makeprg=pylint\ --reports=n\ --output-format=parseable
 autocmd FileType python set errorformat=%f:%l:\ %m
 autocmd QuickFixCmdPost [^l]* cwindow
+
+
+" add .profile configs to vim shell
+set shell=bash\ -l
+" make vim shell interactive (like my own) to support alias
+set shellcmdflag=-ic
