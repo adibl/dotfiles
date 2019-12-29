@@ -40,7 +40,6 @@ set title
 call plug#begin('~/.vim/plugged')
 Plug 'vim-python/python-syntax'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'dense-analysis/ale'
 call plug#end()
 
 " python-syntux plagin config
@@ -50,6 +49,8 @@ let g:python_highlight_all = 1 " enable python highlight from python syntax plug
 set background=dark
 colorscheme PaperColor
 
-"set up ale
-let g:ale_linters = {'python': ['flake8', 'pylint']}
-let g:ale_fixers = {'python': ['autopep8']}
+" make :make % run pylint on current file and move to quickfix window
+" bag: dot sort by line numbers;
+autocmd FileType python set makeprg=pylint\ --reports=n\ --output-format=parseable
+autocmd FileType python set errorformat=%f:%l:\ %m
+autocmd QuickFixCmdPost [^l]* cwindow
