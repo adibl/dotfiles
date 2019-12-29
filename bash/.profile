@@ -29,4 +29,8 @@ fi
 # my changes -------------------------------------------
 export NAVI_PATH="/home/adi/Documents/cheetsheet" # make navi my cheet sheet    s only
 export PATH="$PATH:/home/adi/Documents/bash"
+
+# open bag: alias dont work in vim cmd
 alias rpy="runPython.sh"
+
+

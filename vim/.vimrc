@@ -57,6 +57,5 @@ autocmd QuickFixCmdPost [^l]* cwindow
 
 
 " add .profile configs to vim shell
-set shell=bash\ -l
-" make vim shell interactive (like my own) to support alias
-set shellcmdflag=-ic
+" open bag: alias dont work
+set shell=/bin/bash\ --rcfile\ ~/.profile
