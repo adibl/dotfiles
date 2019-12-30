@@ -1,5 +1,4 @@
-set t_Co=256 "config vim to use 256 colors
-set background=dark "to fix tmux wird colors problem
+set t_Co=256 "config vim to use 256 colors set background=dark "to fix tmux wird colors problem
 syntax on "basic python syntax
 filetype plugin on "??
 au FileType python setl ofu=python3complete "Complete
@@ -11,7 +10,6 @@ set expandtab " enter spaces when tab is presed
 set number "line numbers
 set autoindent "copy indent from last line
 set smartindent "add indent after loops of ifs
-set clipboard=unnamedplus "share clipboard with everything else
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
@@ -40,6 +38,9 @@ set title
 call plug#begin('~/.vim/plugged')
 Plug 'vim-python/python-syntax'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " python-syntux plagin config
@@ -59,3 +60,7 @@ autocmd QuickFixCmdPost [^l]* cwindow
 " add .profile configs to vim shell
 " open bag: alias dont work
 set shell=/bin/bash\ --rcfile\ ~/.profile
+
+set backupdir=~/.cache/vim " Directory to store backup files.
+set confirm " Display a confirmation dialog when closing an unsaved file.
+set dir=~/.cache/vim " Directory to store swap files.
