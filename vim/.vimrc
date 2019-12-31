@@ -1,6 +1,7 @@
 set t_Co=256 "config vim to use 256 colors set background=dark "to fix tmux wird colors problem
 syntax on "basic python syntax
-filetype plugin on "??
+
+" filetype plugin on "??
 au FileType python setl ofu=python3complete "Complete
 set path+=** "search file in all subdirectory
 set wildmenu "set menu to select if multible files match
@@ -36,8 +37,8 @@ set title
 
 " plagin support, initialize plagin meneger
 call plug#begin('~/.vim/plugged')
-Plug 'vim-python/python-syntax'
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'kh3phr3n/python-syntax'
+Plug 'junegunn/seoul256.vim' 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
@@ -47,8 +48,10 @@ call plug#end()
 let g:python_highlight_all = 1 " enable python highlight from python syntax plugin
 
 " activate papercolor-theme
-set background=dark
-colorscheme PaperColor
+let g:seoul256_background = 235
+colo seoul256
+" set airline theme
+let g:airline_theme='angr'
 
 " make :make % run pylint on current file and move to quickfix window
 " bag: dot sort by line numbers;

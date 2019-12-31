@@ -37,3 +37,8 @@ alias rpy="runPython.sh"
 # change defult text editor to vim
 export EDITOR='vim'
 export VISUAL='vim'
+
+
+
+# start tmux on system startup
+tmux start-server
