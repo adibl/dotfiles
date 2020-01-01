@@ -41,7 +41,6 @@ Plug 'kh3phr3n/python-syntax'
 Plug 'junegunn/seoul256.vim' 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " python-syntux plagin config
@@ -67,3 +66,9 @@ set shell=/bin/bash\ --rcfile\ ~/.profile
 set backupdir=~/.cache/vim " Directory to store backup files.
 set confirm " Display a confirmation dialog when closing an unsaved file.
 set dir=~/.cache/vim " Directory to store swap files.
+
+
+set diffopt+=indent-heuristic "see if line that was deleted is few lines after
+set diffopt+=algorithm:histogram "change to best algiruithem
+set diffopt+=iwhiteall " ignore all white spaces
+set diffopt+=iblank " ignore blank lines changes
