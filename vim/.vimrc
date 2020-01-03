@@ -1,7 +1,7 @@
 set t_Co=256 "config vim to use 256 colors set background=dark "to fix tmux wird colors problem
 syntax on "basic python syntax
 
-" filetype plugin on "??
+filetype plugin on "??
 au FileType python setl ofu=python3complete "Complete
 set path+=** "search file in all subdirectory
 set wildmenu "set menu to select if multible files match

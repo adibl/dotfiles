@@ -42,3 +42,6 @@ export VISUAL='vim'
 
 # start tmux on system startup
 tmux start-server
+
+# Created by `userpath` on 2020-01-02 12:04:04
+export PATH="$PATH:/home/adi/.local/bin"
