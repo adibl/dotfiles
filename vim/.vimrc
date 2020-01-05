@@ -2,7 +2,8 @@ set t_Co=256 "config vim to use 256 colors set background=dark "to fix tmux wird
 syntax on "basic python syntax
 
 filetype plugin on "??
-au FileType python setl ofu=python3complete "Complete
+set omnifunc=syntaxcomplete#Complete " defult omni complete
+set completeopt+=menuone,noselect " always add autocomplete menu and dot select first match
 set path+=** "search file in all subdirectory
 set wildmenu "set menu to select if multible files match
 set tabstop=4 "replace tab with 4 spaces
@@ -11,21 +12,6 @@ set expandtab " enter spaces when tab is presed
 set number "line numbers
 set autoindent "copy indent from last line
 set smartindent "add indent after loops of ifs
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MULTIPURPOSE TAB KEY
-" Indent if we're at the beginning of a line. Else, do completion.
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <expr> <tab> InsertTabWrapper()
-inoremap <s-tab> <c-n>
-
 
 let mapleader = " "
 nnoremap <leader>r <C-c>:w<CR>:!python % 
@@ -41,6 +27,7 @@ Plug 'kh3phr3n/python-syntax'
 Plug 'junegunn/seoul256.vim' 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'lifepillar/vim-mucomplete'
 call plug#end()
 
 " python-syntux plagin config
@@ -67,8 +54,12 @@ set backupdir=~/.cache/vim " Directory to store backup files.
 set confirm " Display a confirmation dialog when closing an unsaved file.
 set dir=~/.cache/vim " Directory to store swap files.
 
-
+" diff config
 set diffopt+=indent-heuristic "see if line that was deleted is few lines after
 set diffopt+=algorithm:histogram "change to best algiruithem
 set diffopt+=iwhiteall " ignore all white spaces
 set diffopt+=iblank " ignore blank lines changes
+
+
+" config vim-mucomplete
+
