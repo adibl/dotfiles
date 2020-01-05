@@ -10,8 +10,7 @@ set tabstop=4 "replace tab with 4 spaces
 set shiftwidth=4 "number of spaces to auto indent
 set expandtab " enter spaces when tab is presed
 set number "line numbers
-set autoindent "copy indent from last line
-set smartindent "add indent after loops of ifs
+filetype indent on " indent script by file type
 
 let mapleader = " "
 nnoremap <leader>r <C-c>:w<CR>:!python % 
@@ -40,7 +39,7 @@ colo seoul256
 let g:airline_theme='angr'
 
 " make :make % run pylint on current file and move to quickfix window
-" bag: dot sort by line numbers;
+" bag: don't sort by line numbers;
 autocmd FileType python set makeprg=pylint\ --reports=n\ --output-format=parseable
 autocmd FileType python set errorformat=%f:%l:\ %m
 autocmd QuickFixCmdPost [^l]* cwindow
@@ -59,7 +58,3 @@ set diffopt+=indent-heuristic "see if line that was deleted is few lines after
 set diffopt+=algorithm:histogram "change to best algiruithem
 set diffopt+=iwhiteall " ignore all white spaces
 set diffopt+=iblank " ignore blank lines changes
-
-
-" config vim-mucomplete
-
