@@ -65,4 +65,4 @@ set diffopt+=iblank " ignore blank lines changes
 set completeopt-=preview
 set completeopt+=longest,menuone,noselect
 let g:jedi#popup_on_dot = 0 " dot autoto popup afterter dot
-let g:mucomplete#enable_auto_at_startup = 1 "storeart autotocomplete autotomaticly
+let g:mucomplete#enable_auto_at_startup = 0 "storeart autotocomplete autotomaticly
