@@ -2,7 +2,6 @@ set t_Co=256 "config vim to use 256 colors set background=dark "to fix tmux wird
 syntax on "basic python syntax
 
 filetype plugin on "??
-set omnifunc=syntaxcomplete#Complete " defult omni complete
 set completeopt+=menuone,noselect " always add autocomplete menu and dot select first match
 set path+=** "search file in all subdirectory
 set wildmenu "set menu to select if multible files match
@@ -27,6 +26,7 @@ Plug 'junegunn/seoul256.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'lifepillar/vim-mucomplete'
+Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 " python-syntux plagin config
@@ -49,12 +49,20 @@ autocmd QuickFixCmdPost [^l]* cwindow
 " open bag: alias dont work
 set shell=/bin/bash\ --rcfile\ ~/.profile
 
-set backupdir=~/.cache/vim " Directory to store backup files.
+set backupdir=~/.vim/cache " Directory to store backup files.
 set confirm " Display a confirmation dialog when closing an unsaved file.
-set dir=~/.cache/vim " Directory to store swap files.
+set dir=~/.vim/cache " Directory to store swap files.
+set undofile "save undo history even when file is closed
+set undodir=~/.vim/undo " undo files path
 
 " diff config
 set diffopt+=indent-heuristic "see if line that was deleted is few lines after
 set diffopt+=algorithm:histogram "change to best algiruithem
 set diffopt+=iwhiteall " ignore all white spaces
 set diffopt+=iblank " ignore blank lines changes
+
+"config autocomplete
+set completeopt-=preview
+set completeopt+=longest,menuone,noselect
+let g:jedi#popup_on_dot = 0 " dot autoto popup afterter dot
+let g:mucomplete#enable_auto_at_startup = 1 "storeart autotocomplete autotomaticly

@@ -26,6 +26,8 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+
+
 # my changes -------------------------------------------
 export NAVI_PATH="/home/adi/Documents/cheetsheet" # make navi my cheet sheet    s only
 export PATH="$PATH:/home/adi/Documents/bash"
@@ -43,5 +45,8 @@ export VISUAL='vim'
 # start tmux on system startup
 tmux start-server
 
+# end of my changes --------------------------------
+
 # Created by `userpath` on 2020-01-02 12:04:04
 export PATH="$PATH:/home/adi/.local/bin"
+
